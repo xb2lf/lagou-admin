@@ -1,9 +1,11 @@
-import SMERouter from 'sme-router';
+/* import SMERouter from 'sme-router'; */
+import gp21Router from 'gp21-router'
 import index from '../controllers/users/index';
 import signin from '../controllers/signin';
 import { auth as authModel } from '../models/auth';
 
-const router = new SMERouter('root')
+/* const router = new SMERouter('root'); */
+const router = new gp21Router('root');
 
 // 路由守卫
 router.use(async (req, res, next) => {

@@ -20,6 +20,6 @@
     "build": "npx webpack"
   },
   "dependencies": {
-    "sme-router": "^0.12.8"
+    "gp21-router": "^1.0.1"
   }
 }

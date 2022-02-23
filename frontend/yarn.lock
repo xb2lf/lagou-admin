@@ -2001,6 +2001,13 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+gp21-router@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/gp21-router/-/gp21-router-1.0.1.tgz#1617f671262154cde874bf3b461d4e3b5581de58"
+  integrity sha512-Bkp/RVcwRLKFABRk/Uv1qid/VBoNoy08sk4V4J0hQqACPjXowkZBlhb4t1grdQh7wz+I6HWvrwi5s3OKLgoMBg==
+  dependencies:
+    path-to-regexp "~2.0.0"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2:
   version "4.2.9"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
@@ -3423,7 +3430,7 @@ path-to-regexp@0.1.7:
 
 path-to-regexp@~2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-2.0.0.tgz#b77a8168c2e78bc31f3d312d71b1ace97df23870"
+  resolved "https://registry.npmmirror.com/path-to-regexp/-/path-to-regexp-2.0.0.tgz#b77a8168c2e78bc31f3d312d71b1ace97df23870"
   integrity sha512-DPZblKdQsbV6B3fHknj89h6Nw/Z5zFK0nFX+DVN7y8a+IUHf9taJWvMK+ue0+AEjXrke0KVRCcfm2pOYGSRk8g==
 
 path-type@^4.0.0:
@@ -4082,13 +4089,6 @@ slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
-
-sme-router@^0.12.8:
-  version "0.12.8"
-  resolved "https://registry.yarnpkg.com/sme-router/-/sme-router-0.12.8.tgz#cbcce0d3e65f868c490aaa8944b2c9a6305383e9"
-  integrity sha512-+WRghUCpCo1yahelvND6xx8FUO+CmJHU9PNbqwn12c7B3Irm8tMTX1MRE/cjKFpvGgmVJJR+urN8sS7UVrYySg==
-  dependencies:
-    path-to-regexp "~2.0.0"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
