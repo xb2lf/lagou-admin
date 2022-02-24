@@ -36,14 +36,21 @@ const remove = async (req, res, next) => {
   res.set('content-type', 'application/json;charset=utf-8');
   const { id } = req.body;
   const result = await usersModel.remove(id);
-  if (result) {
-    res.render('succ', {
-      data: JSON.stringify({ message: '用户删除成功' })
+  try {
+    if (result.deletedCount) {
+      res.render('succ', {
+        data: JSON.stringify({ message: '用户删除成功' })
+      })
+    } else {
+      res.render('fail', {
+        data: JSON.stringify({ message: '用户删除失败' })
+      })
+    }
+  } catch (error) {
+    res.render('fail', {
+      data: JSON.stringify({ message: '用户删除失败' })
     })
   }
-  res.render('fail', {
-    data: JSON.stringify({ message: '用户删除失败' })
-  })
 }
 
 // 登录

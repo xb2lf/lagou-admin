@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const { signup, list, remove, signin, signout, isAuth } = require('../controllers/users');
-const { auth } = require('../middlewares/auth')
+const { auth } = require('../middlewares/auth');
 
 /* GET users listing. */
 router.get('/', auth, list);

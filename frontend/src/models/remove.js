@@ -1,9 +1,11 @@
 import http from "../utils/http"
 
-export const usersList = async () => {
+export const remove = async (url, data) => {
   try {
     const { result } = await http({
-      url: '/api/users',
+      url,
+      type: 'delete',
+      data,
     });
     return result
   } catch (error) {

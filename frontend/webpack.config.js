@@ -20,11 +20,19 @@ module.exports = {
         options: {
           // art-template options (if necessary)
           // @see https://github.com/aui/art-template
+          escape: false,
         }
       },
       {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192
+        },
       },
     ],
   },

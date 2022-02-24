@@ -13,7 +13,7 @@ const _handleSubmit = (router) => {
     if (res.ret) {
       const token = jqXHR.getResponseHeader('X-Access-Token');
       localStorage.setItem('lg-token', token);
-      router.go('/index');
+      router.go('/index/users');
     }
   }
 }

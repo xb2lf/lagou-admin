@@ -1,6 +1,6 @@
 import userAddTpl from '../../views/users-add.art';
 import page from '../../databus/page';
-import { usersAdd as usersAddModel } from '../../models/users-add';
+import { usersAdd as usersAddModel } from '../../models/users';
 
 // 添加用户
 export const addUser = () => {

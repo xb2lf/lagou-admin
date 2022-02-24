@@ -10,6 +10,19 @@ var usersSchema = mongoose.Schema({
   password: String
 });
 
-var Users = mongoose.model('users', usersSchema);
+//构建positions的model
+var positionsSchema = mongoose.Schema({
+  companyName: String,
+  positionName: String,
+  city: String,
+  createTime: String,
+  salary: String
+})
 
-exports.Users = Users;
+var Users = mongoose.model('users', usersSchema);
+var Positions = mongoose.model('positions', positionsSchema);
+
+module.exports = {
+  Users,
+  Positions
+}

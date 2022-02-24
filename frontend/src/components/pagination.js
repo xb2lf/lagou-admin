@@ -8,7 +8,7 @@ const _setPageActive = (index) => {
 const _pagination = (data, pageSize) => {
   const total = data.length;
   const pageCount = Math.ceil(total / pageSize);
-  const pageArray = new Array(pageCount)
+  const pageArray = new Array(pageCount);
   const htmlPage = usersListPagesTpl({ pageArray });
   $('#users-pages').html(htmlPage);
   _setPageActive(page.currPage);
@@ -18,7 +18,7 @@ const _pagination = (data, pageSize) => {
 
 const _bindEvent = (data, pageSize) => {
   // 分页事件绑定
-  $('#users-pages').on('click', '#users-page-list li:not(:first-child,:last-child)', function () {
+  $('#users-pages').off('click').on('click', '#users-page-list li:not(:first-child,:last-child)', function () {
     const index = $(this).index();
     page.setCurrpage(index);
     $('body').trigger('changeCurrpage', index);
