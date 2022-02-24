@@ -7,14 +7,17 @@ import { positionsAdd as positionsAddModel } from '../../models/positions';
 export const addPosition = () => {
   $('#positions-list-box').after(positionsAddTpl());
   const _save = async () => {
-    const formbody = $('#position-form').serialize();
-    const res = await positionsAddModel(formbody);
-    if (res.ret) {
-      page.setCurrpage(1);
-      // 告知list页面要重新渲染
-      $('body').trigger('addPosition');
+    try {
+      const res = await positionsAddModel();
+      if (res.ret) {
+        page.setCurrpage(1);
+        // 告知list页面要重新渲染
+        $('body').trigger('addPosition');
+      }
+      $('#positions-close').click();
+    } catch (error) {
+      console.log(error);
     }
-    $('#positions-close').click();
   }
   $('#positions-save').off('click').on('click', _save)
 }

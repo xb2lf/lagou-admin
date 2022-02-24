@@ -24,6 +24,12 @@ const index = (router) => {
       localStorage.removeItem('lg-token');
       location.reload()
     })
+    // socket
+    var socket = io.connect('http://localhost:3000');
+    socket.on('message', function (msg) {
+      let num = ~~$('#icon-email').text();
+      $('#icon-email').text(++num);
+    })
   }
   return async (req, res, next) => {
     const result = await authModel();

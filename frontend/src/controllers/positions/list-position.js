@@ -6,6 +6,7 @@ import page from '../../databus/page';
 import { auth as authModel } from "../../models/auth";
 import { positionsList as positionsListModel } from '../../models/positions';
 import { addPosition } from './add-position';
+import { updatePosition, fillPositionsUpdateTpl } from './update-position'
 import { remove } from '../common';
 
 let state = {
@@ -45,11 +46,18 @@ const listPositions = (router) => {
     if (result.ret) {
       next();
       res.render(positionsTpl());
-      $('#add-position-btn').on('click', addPosition)
+      // 添加职位
+      $('#add-position-btn').on('click', addPosition);
       // 初次渲染list
       await _loadData();
       // 删除事件绑定
-      remove('#positions-list', '/api/positions/remove', _loadData, state)
+      remove('#positions-list', '/api/positions/remove', _loadData, state);
+      updatePosition();
+      // 编辑职位
+      $('#positions-list').off('click', '.positions-update').on('click', '.positions-update', function () {
+        const id = $(this).data('id');
+        fillPositionsUpdateTpl(id);
+      });
       // 订阅事件
       _subscribe();
     } else {
